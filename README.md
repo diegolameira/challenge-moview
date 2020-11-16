@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Moview
+
+## About
+
+This is a code assessment. Take a look over it's [challenge description](./Challenge.md).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
