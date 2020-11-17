@@ -45,7 +45,14 @@ const ListItem: React.FC<ItemProps> = ({
   <li onClick={onClick} className={styles.listItem}>
     <header>
       <strong>{`${score * 100}%`}</strong>
-      <a href={url}>{title}</a>
+      <a
+        href={url}
+        onClick={(e) => {
+          isOpen && e.stopPropagation();
+        }}
+      >
+        {title}
+      </a>
       <span>({year})</span>
     </header>
     {isOpen && (
