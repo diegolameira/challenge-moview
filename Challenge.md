@@ -47,7 +47,7 @@ or
 
 <img src="http://i.imgur.com/B9kFGQe.png" width="500">
 
-- [ ] In order to not spam our API, cache the responses in the browsers [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API). Do not make network requests to the API if there is a cached version of the response available.
+- [x] In order to not spam our API, cache the responses in the browsers [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API). Do not make network requests to the API if there is a cached version of the response available.
 
 <img src="http://i.imgur.com/cD4xmbQ.gif" width="500">
 
