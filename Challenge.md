@@ -35,7 +35,7 @@ or
 
 <img src="http://i.imgur.com/y9uwdQw.png" width="500">
 
-- [ ] When a user clicks on the title of the movie, they should be redirected to the Rotten Tomatoes page for that movie.
+- [x] When a user clicks on the title of the movie, they should be redirected to the Rotten Tomatoes page for that movie.
 
 <img src="http://i.imgur.com/EYia9xk.gif" width="500">
 

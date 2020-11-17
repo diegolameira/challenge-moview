@@ -12,18 +12,19 @@ function App() {
   React.useEffect(() => {
     Movies.getMovies().then(setMovie);
   }, []);
+
   return (
     <>
       <Header />
       <p>
         Below is a (not) comprehensive list of movies that Even really likes.
       </p>
-      <List items={movies.sort(alphaBy('title')).map<any>(mapMovieToItem)} />
+      <List items={movies.sort(alphaBy('title')).map<any>(toListItem)} />
     </>
   );
 }
 
-const mapMovieToItem = ({ id, title }: Movie) => ({ id, title });
+const toListItem = ({ id, title, url }: Movie) => ({ id, title, url });
 
 const alphaBy = (prop: string) => (a: any, b: any) => {
   if (a[prop] < b[prop]) return -1;

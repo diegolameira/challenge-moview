@@ -10,7 +10,10 @@ export const List: React.FC<ListProps> = ({ items }) => (
 interface ItemProps {
   id: string;
   title: string;
+  url: string;
 }
-const ListItem: React.FC<ItemProps> = ({ id, title }) => (
-  <li key={id}>{title}</li>
+const ListItem: React.FC<ItemProps> = ({ id, title, url }) => (
+  <li key={id}>
+    <a href={url}>{title}</a>
+  </li>
 );
