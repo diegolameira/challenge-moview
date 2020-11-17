@@ -8,8 +8,9 @@ export const List: React.FC<ListProps> = ({ items }) => (
 );
 
 interface ItemProps extends Movie {}
-const ListItem: React.FC<ItemProps> = ({ id, title, year, url }) => (
+const ListItem: React.FC<ItemProps> = ({ id, title, year, url, score }) => (
   <li key={id}>
+    {`${score * 100}%`}
     <a href={url}>{title}</a>({year})
   </li>
 );

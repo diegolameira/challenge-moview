@@ -43,7 +43,7 @@ or
 
 <img src="http://i.imgur.com/J9eBexT.png" width="500">
 
-- [ ] Display the Rotten Tomatoes rating next to each movie title in the list. This value should be displayed as a percentage.
+- [x] Display the Rotten Tomatoes rating next to each movie title in the list. This value should be displayed as a percentage.
 
 <img src="http://i.imgur.com/B9kFGQe.png" width="500">
 
