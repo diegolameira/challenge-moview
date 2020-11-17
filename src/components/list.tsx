@@ -7,9 +7,9 @@ interface ListProps {
   onOpen: (item: ItemProps) => void;
 }
 export const List: React.FC<ListProps> = ({ items, onOpen }) => {
-  const [open, setOpen] = React.useState<number>();
+  const [open, setOpen] = React.useState<number | null>();
   const handleClick = (item: ItemProps) => () => {
-    setOpen(item.id);
+    setOpen((current) => (current === item.id ? null : item.id));
     onOpen(item);
   };
   return (
