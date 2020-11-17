@@ -7,13 +7,9 @@ export const List: React.FC<ListProps> = ({ items }) => (
   <ul>{items.map(ListItem)}</ul>
 );
 
-interface ItemProps {
-  id: string;
-  title: string;
-  url: string;
-}
-const ListItem: React.FC<ItemProps> = ({ id, title, url }) => (
+interface ItemProps extends Movie {}
+const ListItem: React.FC<ItemProps> = ({ id, title, year, url }) => (
   <li key={id}>
-    <a href={url}>{title}</a>
+    <a href={url}>{title}</a>({year})
   </li>
 );

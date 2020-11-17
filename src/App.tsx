@@ -19,12 +19,10 @@ function App() {
       <p>
         Below is a (not) comprehensive list of movies that Even really likes.
       </p>
-      <List items={movies.sort(alphaBy('title')).map<any>(toListItem)} />
+      <List items={movies.sort(alphaBy('title'))} />
     </>
   );
 }
-
-const toListItem = ({ id, title, url }: Movie) => ({ id, title, url });
 
 const alphaBy = (prop: string) => (a: any, b: any) => {
   if (a[prop] < b[prop]) return -1;

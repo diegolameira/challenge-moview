@@ -39,7 +39,7 @@ or
 
 <img src="http://i.imgur.com/EYia9xk.gif" width="500">
 
-- [ ] Display the year the movie was released next to the title.
+- [x] Display the year the movie was released next to the title.
 
 <img src="http://i.imgur.com/J9eBexT.png" width="500">
 
