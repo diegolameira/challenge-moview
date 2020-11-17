@@ -64,7 +64,7 @@ or
 
 <img src="http://i.imgur.com/aGhZLHS.gif" width="500">
 
-- [ ] When a movie row is clicked, expand the row to show what Evan says about the movie. Clicking the row again should collapse it.
+- [x] When a movie row is clicked, expand the row to show what Evan says about the movie. Clicking the row again should collapse it.
 
 <img src="http://i.imgur.com/nSBORZw.gif" width="500">
 

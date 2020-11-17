@@ -9,23 +9,23 @@ export abstract class Api {
     this.baseUrl = baseUrl;
   }
 
-  private saveCache = (value: any) => {
-    setItem(this.path, value);
+  private saveCache = (key: string) => (value: any) => {
+    setItem(key, value);
     return value;
   };
 
-  private loadCache = () => {
-    return getItem(this.path);
+  private loadCache = (key: string) => {
+    return getItem(key);
   };
 
   protected async getResource<T extends string, Return>(
     route: T
   ): Promise<Return> {
     try {
-      const cache = this.loadCache();
+      const cache = this.loadCache(`${this.path}${route}`);
       if (cache) return cache;
       const response = await fetch(`${this.baseUrl}${route}`);
-      return response.json().then(this.saveCache);
+      return response.json().then(this.saveCache(`${this.path}${route}`));
     } catch (e) {
       loggy(e);
       return e;

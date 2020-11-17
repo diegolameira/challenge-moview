@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { loggy } from 'services/loggy';
 import Movies from 'services/movies';
+import Reviews from 'services/reviews';
 
 import { Header } from 'components/header';
 import { List } from 'components/list';
@@ -11,10 +12,23 @@ function App() {
   const [search, setSearch] = React.useState<string>('');
   const [decade, setDecade] = React.useState<number>();
   const [movies, setMovies] = React.useState<Movie[]>([]);
+  const [reviews, setReviews] = React.useState<Review[]>([]);
   const [decades, setDecades] = React.useState<string[]>([]);
 
   const handleInputChange = (value: string) => {
     setSearch(value);
+  };
+
+  const loadReview = (id: number) => {
+    Reviews.getReviewByMovieId(id).then((review: Review) => {
+      setReviews((reviews) => {
+        return ~reviews.findIndex(
+          ({ 'movie-id': movieId }: Review) => movieId === review['movie-id']
+        )
+          ? reviews
+          : [...reviews, review];
+      });
+    });
   };
 
   React.useEffect(() => {
@@ -48,6 +62,9 @@ function App() {
         }}
       />
       <List
+        onOpen={({ id }: any) => {
+          loadReview(id);
+        }}
         items={movies
           .filter(({ year }) => !decade || year == decade)
           .filter((movie) => {
@@ -55,7 +72,13 @@ function App() {
               return new RegExp(search, 'gi').test(movie.title);
             return true;
           })
-          .sort(alphaBy('title'))}
+          .sort(alphaBy('title'))
+          .map((movie) => ({
+            ...movie,
+            review: reviews.find(
+              ({ 'movie-id': movieId }) => movie.id === movieId
+            )?.review,
+          }))}
       />
     </>
   );
