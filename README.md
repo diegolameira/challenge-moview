@@ -1,4 +1,24 @@
-# Moview
+<p align="center">
+  <h2 align="center">Moview</h2>
+  <p align="center">
+  a (not) comprehensive list of movies
+  </p>
+
+  <p align="center">
+    <br />
+    <a href="https://challenge-moview.vercel.app">Visit</a>
+    ·
+    <a href="https://github.com/diegolameira/challenge-moview/blob/main/Challenge.md">The Challenge</a>
+  </p>
+</p>
+
+<br />
+<br />
+<br />
+
+## Preview
+
+![image](https://user-images.githubusercontent.com/1857527/99386887-de5ea880-28b1-11eb-88d8-a114332aa14f.png)
 
 ## About
 
