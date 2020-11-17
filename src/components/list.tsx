@@ -34,6 +34,7 @@ const ListItem: React.FC<ItemProps> = ({
   id,
   title,
   year,
+  'cover-url': coverUrl,
   url,
   score,
   isOpen,
@@ -42,6 +43,12 @@ const ListItem: React.FC<ItemProps> = ({
 }) => (
   <li onClick={onClick}>
     {`${score * 100}%`}
-    <a href={url}>{title}</a>({year}){isOpen && <div>{review}</div>}
+    <a href={url}>{title}</a>({year})
+    {isOpen && (
+      <div>
+        <img src={coverUrl} />
+        {review}
+      </div>
+    )}
   </li>
 );
