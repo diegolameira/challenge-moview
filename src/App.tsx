@@ -5,18 +5,31 @@ import Movies from 'services/movies';
 
 import { Header } from 'components/header';
 import { List } from 'components/list';
+import { Select } from 'components/select';
 
 function App() {
   const [search, setSearch] = React.useState<string>('');
-  const [movies, setMovie] = React.useState<Movie[]>([]);
+  const [decade, setDecade] = React.useState<number>();
+  const [movies, setMovies] = React.useState<Movie[]>([]);
+  const [decades, setDecades] = React.useState<string[]>([]);
 
   const handleInputChange = (value: string) => {
     setSearch(value);
   };
 
   React.useEffect(() => {
-    Movies.getMovies().then(setMovie);
-  }, []);
+    Movies.getMovies().then((movies) => {
+      setMovies(movies);
+      setDecades(
+        movies
+          .map(({ year }) => `${year}`)
+          // remove duplicates
+          .filter((value, index, self) => {
+            return self.indexOf(value) === index;
+          })
+      );
+    });
+  }, [Movies, setMovies, decade]);
 
   return (
     <>
@@ -28,8 +41,15 @@ function App() {
         placeholder="Search by title"
         onChange={(e) => handleInputChange(e.target.value)}
       />
+      <Select
+        options={['', ...decades]}
+        onChange={(e) => {
+          setDecade(e.target.value);
+        }}
+      />
       <List
         items={movies
+          .filter(({ year }) => !decade || year == decade)
           .filter((movie) => {
             if (search.length >= 2)
               return new RegExp(search, 'gi').test(movie.title);

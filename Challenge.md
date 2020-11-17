@@ -60,7 +60,7 @@ or
 
 <img src="http://i.imgur.com/zkbLoS3.gif" width="500">
 
-- [ ] Allow filtering by decade. Decade options should be computed from the data, _not hard-coded_. Selecting a decade should filter the list to show all movies from that decade.
+- [x] Allow filtering by decade. Decade options should be computed from the data, _not hard-coded_. Selecting a decade should filter the list to show all movies from that decade.
 
 <img src="http://i.imgur.com/aGhZLHS.gif" width="500">
 
