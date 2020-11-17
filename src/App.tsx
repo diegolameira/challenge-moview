@@ -8,6 +8,8 @@ import { Header } from 'components/header';
 import { List } from 'components/list';
 import { Select } from 'components/select';
 
+import styles from 'index.module.scss';
+
 function App() {
   const [search, setSearch] = React.useState<string>('');
   const [decade, setDecade] = React.useState<number>();
@@ -46,12 +48,13 @@ function App() {
   }, [Movies, setMovies, decade]);
 
   return (
-    <>
+    <div className={styles.container}>
       <Header />
       <p>
         Below is a (not) comprehensive list of movies that Even really likes.
       </p>
       <input
+        className={styles.search}
         placeholder="Search by title"
         onChange={(e) => handleInputChange(e.target.value)}
       />
@@ -80,7 +83,7 @@ function App() {
             )?.review,
           }))}
       />
-    </>
+    </div>
   );
 }
 

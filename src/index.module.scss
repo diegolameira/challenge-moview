@@ -1,0 +1,51 @@
+.container {
+  padding: 2rem;
+}
+
+.header {
+}
+
+.search,
+.select {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.select {
+}
+
+.list {
+}
+
+.listItem {
+  padding: 0.5rem;
+  padding: 2;
+  cursor: pointer;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  header {
+    display: flex;
+    * {
+      margin: 0 5px;
+    }
+  }
+
+  a {
+    font-weight: 600;
+  }
+
+  div {
+    display: flex;
+    padding: 1rem 0;
+    img {
+      margin-right: 1rem;
+    }
+  }
+}

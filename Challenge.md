@@ -75,7 +75,7 @@ or
 - [x] Display the movie art next to the review. The image files are provided by the API.
 
 <img src="http://i.imgur.com/UErNiAB.png" width="500">
-- [ ] All of the above features should look nice. Feel free to borrow styling from the screenshots or improve upon them. You have the freedom to style the solution however you see fit, feel free to be creative.  Do not worry about cross-browser compatibility; the only browser you need to concern yourself with is the latest version of Google Chrome.
+- [x] All of the above features should look nice. Feel free to borrow styling from the screenshots or improve upon them. You have the freedom to style the solution however you see fit, feel free to be creative.  Do not worry about cross-browser compatibility; the only browser you need to concern yourself with is the latest version of Google Chrome.
 
 ## Success Criteria
 
