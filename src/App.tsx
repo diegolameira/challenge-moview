@@ -1,32 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
 
 import { loggy } from 'services/loggy';
-import movies from 'services/movies';
+import Movies from 'services/movies';
+
+import { Header } from 'components/header';
+import { List } from 'components/list';
 
 function App() {
+  const [movies, setMovie] = React.useState<Movie[]>([]);
+
   React.useEffect(() => {
-    movies.getMovies().then(loggy);
+    Movies.getMovies().then(setMovie);
   }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <p>
+        Below is a (not) comprehensive list of movies that Even really likes.
+      </p>
+      <List items={movies.sort(alphaBy('title')).map<any>(mapMovieToItem)} />
+    </>
   );
 }
+
+const mapMovieToItem = ({ id, title }: Movie) => ({ id, title });
+
+const alphaBy = (prop: string) => (a: any, b: any) => {
+  if (a[prop] < b[prop]) return -1;
+  if (a[prop] > b[prop]) return 1;
+  return 0;
+};
 
 export default App;

@@ -31,7 +31,7 @@ or
 
 ## Tasks
 
-- [ ] Display the list of movies on the page. Movies should be listed in alphabetical order.
+- [x] Display the list of movies on the page. Movies should be listed in alphabetical order.
 
 <img src="http://i.imgur.com/y9uwdQw.png" width="500">
 
