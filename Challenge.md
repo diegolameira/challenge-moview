@@ -51,7 +51,7 @@ or
 
 <img src="http://i.imgur.com/cD4xmbQ.gif" width="500">
 
-- [ ] Allow searching by title. Only filter results if 2 or more characters are entered in the search box. The list below should update when the value of the search box changes.
+- [x] Allow searching by title. Only filter results if 2 or more characters are entered in the search box. The list below should update when the value of the search box changes.
 
   Search should
 
